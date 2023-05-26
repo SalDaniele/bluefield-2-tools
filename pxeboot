@@ -208,7 +208,7 @@ def bf_select_pxe_entry(args):
     child.maxread = 10000
     print("waiting for the boot countdown to interrupt it and go to bios")
     child.expect("3.*seconds remain", timeout=30)
-    print("found countdown, sending 'esc' twice")
+    print("found countdown, sending 'esc' 4 times")
     child.send(ESC*4)
     time.sleep(1)
     child.close()
@@ -391,7 +391,7 @@ def try_pxy_boot():
     else:
         bf_select_pxe_entry(args)
 
-    response_ip = wait_any_ping(list(f"172.31.100.{x}" for x in range(10, 21)), 180)
+    response_ip = wait_any_ping(list(f"172.31.100.{x}" for x in range(10, 21)), 360)
     print(f"got response from {response_ip}")
     if args.key:
         ipa = wait_and_login(args, response_ip)
