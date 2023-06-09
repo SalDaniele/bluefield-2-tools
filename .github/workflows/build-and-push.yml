@@ -27,4 +27,6 @@ jobs:
         context: .
         file: Dockerfile
         push: true
-        tags: quay.io/sdaniele/bf:latest
+        tags: |
+          quay.io/sdaniele/bf:$(date +'%Y%m%d')
+          quay.io/sdaniele/bf:latest
