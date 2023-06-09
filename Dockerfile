@@ -8,7 +8,7 @@ RUN dnf install -y \
     ln -s /usr/bin/pip3.9 /usr/bin/pip && \
     ln -s /usr/bin/python3.9 /usr/bin/python
 
-COPY * .
+COPY * /
 
 RUN dnf install -y rust cargo python3-pip && \
     dnf clean all && \
