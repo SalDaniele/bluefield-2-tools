@@ -31,5 +31,5 @@ jobs:
         file: Dockerfile
         push: true
         tags: |
-          quay.io/sdaniele/bf:${{ env.DATE }}
+          quay.io/sdaniele/bf:${{ steps.date.outputs.date }}
           quay.io/sdaniele/bf:latest
