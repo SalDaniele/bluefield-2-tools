@@ -17,7 +17,7 @@ jobs:
       uses: actions/checkout@v2
     - name: Set date
       id: date
-      run: echo "::set-output name=date::$(date +'%Y%m%d')"
+      run: echo "::set-output name=date::$(date +'%m-%d-%Y')"
     - name: Authenticate
       uses: docker/login-action@v1
       with:
